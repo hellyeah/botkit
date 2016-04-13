@@ -110,6 +110,18 @@ controller.hears(['hello', 'hi'], 'message_received', function(bot, message) {
     });
 });
 
+controller.hears(['hackathon'], 'message_received', function(bot, message) {
+
+    controller.storage.users.get(message.user, function(err, user) {
+        var numberofL = Math.floor((Math.random() * 10) + 1);
+        var l = "l"
+        for (var i = 0; i < numberofL; i++) {
+            l += "l"
+        }
+        bot.reply(message, 'He' + l + ' yeah')
+    });
+});
+
 
 controller.hears(['structured'], 'message_received', function(bot, message) {
 
